@@ -134,4 +134,10 @@ body {
 }
 
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; 画面の高さいっぱいに広げる */
+}
 
