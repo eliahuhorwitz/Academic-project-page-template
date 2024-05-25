@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Vision Is All You Need: <br>A Vision-Only Approach to Dynamics Estimation in Autonomous Navigation</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -83,14 +83,28 @@
                       </a>
                     </span>
 
+                      <!-- Supplementary PDF link -->
+                    <!-- Progress Proposal PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/Project_Proposal.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Project Proposal</span>
+                    </a>
+                  </span>
+
+
                     <!-- Supplementary PDF link -->
+                    <!-- Progress Report PDF link -->
                     <span class="link-block">
                       <a href="static/pdfs/Project_Progress_Report.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Progress Report</span>
                     </a>
                   </span>
 
@@ -106,15 +120,15 @@
                 </span>
 
                 <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+<!--                <span class="link-block">-->
+<!--                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"-->
+<!--                  class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                    <i class="ai ai-arxiv"></i>-->
+<!--                  </span>-->
+<!--                  <span>arXiv</span>-->
+<!--                </a>-->
+<!--              </span>-->
             </div>
           </div>
         </div>
@@ -130,7 +144,7 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/snippet.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
@@ -149,7 +163,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Inspired by biological systems' proficiency in navigating complex environments using primarily visual
+            inputs, we propose a novel, vision-only approach to enable an autonomous drone to navigate highly dynamic
+            environments effectively. Unlike traditional methods that use complex sensor arrays to capture environmental
+            dynamics, our project aimed at developing a simpler, cost-effective visual-based model. Specifically, the
+            project investigates whether a drone can solely rely on visual information to estimate the dynamics of
+            objects and make optimal decisions in dynamic settings. We employ a two-phase training process, initially
+            leveraging both visual observations and privileged information about environment dynamics to teach the
+            drone to navigate through gates while evading projectiles. The subsequent phase involves refining a
+            Dynamics Module to predict environmental dynamics from visual inputs alone. This approach could
+            revolutionize the design and deployment of autonomous systems, reducing reliance on expensive sensors
+            and increasing accessibility across various applications.
           </p>
         </div>
       </div>
