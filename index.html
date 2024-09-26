@@ -43,37 +43,163 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+    <!-- Splide CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/3.6.12/css/splide.min.css">
+
+  <style>
+      /* Splide pagination customization */
+      .splide__pagination__page {
+          background: rgb(51, 51, 51);
+      }
+      .splide__pagination__page.is-active {
+          background: rgb(185, 85, 85);
+      }
+
+      /* Ensure videos are displayed side by side */
+      .splide__slide {
+          padding: 0 10px; /* Add some space between slides */
+      }
+
+      .video-container {
+          position: relative;
+      }
+
+      .speed-label {
+          position: absolute;
+          bottom: 0.5rem;
+          right: 1rem;
+          background: rgba(255, 255, 255, 0.85);
+          color: #4a4a4a;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+      }
+
+      /* Container width control */
+      #container {
+          max-width: 90%;
+          margin: auto;
+      }
+
+
+      video, img {
+          width: 100%;
+          border-radius: 8px;
+      }
+      .wrapper {
+	position: relative;  /* 固定在屏幕上，滚动时不动 */
+	top: 0%;         /* 垂直居中 */
+	left: 40%;        /* 水平居中 */
+	transform: translate(-50%, -50%); /* 调整位置，使得真正居中 */
+	width: 300px;     /* 可以根据需求调整宽度 */
+	padding: 20px;    /* 内边距，给内容一些空间 */
+}
+
+.collapsed {
+	height: 8rem;
+}
+
+.collapsed h1 {
+	padding-top: 200%;
+}
+.text-container {
+	position: relative;
+	font-family: 'Arial', sans-serif;
+	font-size: 150px;
+	font-weight: bold;
+
+	color: white;
+	width: 70%;
+	white-space: nowrap; /* 防止换行 */
+	text-align: center; /* 居中对齐 */
+}
+
+/* .relative {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+} */
+
+.text-container .text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	color: transparent; /* 镂空效果 */
+}
+
+.text-container .text-3 {
+	color: rgba(63, 93, 163, 0.6); /* 蓝色 */
+	transform: translate(-10px, -10px);
+	-webkit-text-stroke: 2px rgba(63, 93, 163, 0.9); /* 字体边框 */
+}
+
+.text-container .text-2 {
+	color: rgba(145, 190, 92, 0.6); /* 绿色 */
+	transform: translate(0px, 0px);
+	-webkit-text-stroke: 2px rgba(145, 190, 92, 0.9); /* 字体边框 */
+}
+
+.text-container .text-1 {
+	color: rgba(165, 74, 76, 0.6); /* 红色 */
+	transform: translate(10px, 10px);
+	-webkit-text-stroke: 2px rgba(165, 74, 76, 0.9); /* 字体边框 */
+}
+
+  </style>
 </head>
 <body>
+  <section>
 
-
-  <section class="hero">
+  <div class="flex flex-col items-center justify-center" >
+    <div class="wrapper">
+    <div class="text-container">
+      <div class="text text-1">Tiny-VLA</div>
+      <div class="text text-2">Tiny-VLA</div>
+      <div class="text text-3">Tiny-VLA</div>
+    </div>
+  </div>
+</section>
+  <section class="hero" style="padding-top: 8%;">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
+
+            <h1 class="title is-1 publication-title" style="display: flex; align-items: center;">
+              <span style="margin-left: 1rem;">Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation</span>
+            </h1>
+              <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
+              <span class="px-2"> Junjie Wen*<sup>,1,2</sup> </span>
+              <span class="px-2"> Yichen Zhu*<sup>,1</sup> </span>
+              <span class="px-2">Jinming Li<sup>1,3</sup></span>
+              <span class="px-2"> Minjie Zhu<sup>1,2</sup> </span>
+              <span class="px-2"> Kun Wu<sup>4,5</sup> </span>
+              <span class="px-2"> Zhiyuan Xu<sup>5</sup> </span>
+              <span class="px-2">Ran Cheng<sup>1</sup></span>
+              <span class="px-2">Chaomin Shen<sup>2</sup></span>
+              <span class="px-2">Yaxin Peng<sup>3</sup></span>
+              <span class="px-2">Feifei Feng<sup>1</sup></span>
+              <span class="px-2">Jian Tang<sup>5</sup></span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span style="color: rgb(145, 143, 143);" class="px-4">1. Midea Group</span>
+                    <span style="color: rgb(145, 143, 143);" class="px-4">2. East China Normal University</span>
+                    <span style="color: rgb(145, 143, 143);" class="px-4">3. Shanghai University</span>
+                    <span style="color: rgb(145, 143, 143);" class="px-4">4. Syracuse University</span>
+                    <br>
+                    <span style="color: rgb(145, 143, 143);" class="px-4">5. Beijing Innovation Center of Humanoid Robotics</span>
+                    <span style="color: rgb(145, 143, 143);" class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution,listed in alphabetical order.This work was done during Junjie Wen's internship in Midea Group.</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/2409.12514" target=""
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -83,7 +209,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,22 +217,23 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
+                    <a href="javascript:void(0);" onclick="window.history.back();"
+                       class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <span>code</span>
+                    </a>
                 </span>
+                
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2409.12514" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -122,33 +249,142 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
+<div id="container" class="splide">
+  <div class="splide__track">
+      <ul class="splide__list">
+          <!-- Video 1 -->
+          <li class="splide__slide video-container">
+              <video muted loop autoplay poster="static/videos/origin_tasks/tennis.png">
+                  <source src="static/videos/origin_tasks/tennis.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <span class="speed-label">1x</span>
+          </li>
+          <!-- Video 2 -->
+          <li class="splide__slide video-container">
+              <video muted loop autoplay poster="static/videos/origin_tasks/mug.png">
+                  <source src="static/videos/origin_tasks/mug.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <span class="speed-label">1x</span>
+          </li>
+          <!-- Video 3 -->
+          <li class="splide__slide video-container">
+              <video muted loop autoplay poster="static/videos/origin_tasks/unzipbag.png">
+                  <source src="static/videos/origin_tasks/unzipbag.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <span class="speed-label">3x</span>
+          </li>
+          <!-- Video 4 -->
+          <li class="splide__slide video-container">
+              <video muted loop autoplay poster="static/videos/origin_tasks/box.png">
+                  <source src="static/videos/origin_tasks/box.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <span class="speed-label">1x</span>
+          </li>
+          <!-- Video 4 -->
+          <li class="splide__slide video-container">
+            <video muted loop autoplay poster="static/videos/origin_tasks/stack_cube.png">
+                <source src="static/videos/origin_tasks/single_cube.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="speed-label">1x</span>
+        </li>
+        <!-- Video 4 -->
+          <li class="splide__slide video-container">
+            <video muted loop autoplay poster="static/videos/origin_tasks/drawer2.png">
+                <source src="static/videos/origin_tasks/drawer2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="speed-label">1x</span>
+        </li>
+            <!-- Video 4 -->
+            <li class="splide__slide video-container">
+              <video muted loop autoplay poster="static/videos/origin_tasks/transfer_bread.png">
+                  <source src="static/videos/origin_tasks/transfer_bread.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <span class="speed-label">1x</span>
+          </li>
+                      <!-- Video 4 -->
+          <li class="splide__slide video-container">
+            <video muted loop autoplay poster="static/videos/origin_tasks/single_cube.png">
+                <source src="static/videos/origin_tasks/single_cube.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="speed-label">1x</span>
+        </li>
+          <!-- Add more videos as needed -->
+      </ul>
   </div>
-</section>
-<!-- End teaser video -->
+
+  <!-- Pagination and Navigation Arrows -->
+  <div class="splide__pagination"></div>
+  <div class="splide__arrows">
+    <button class="splide__arrow splide__arrow--prev">
+        &#8592; <!-- Left arrow (←) -->
+    </button>
+    <button class="splide__arrow splide__arrow--next">
+        &#8594; <!-- Right arrow (→) -->
+    </button>
+</div>
+</div>
+
+<!-- Splide JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/3.6.12/js/splide.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#container', {
+          perPage: 3, // Show 3 videos per view
+          perMove: 1,
+          autoplay: true,
+          rewind: true,
+          interval: 10000,
+          pagination: true, // Enable pagination
+          arrows: true, // Enable navigation arrows
+          breakpoints: {
+              768: {
+                  perPage: 1 // On small screens, show 1 video per view
+              }
+          }
+      }).mount();
+  });
+</script>
+
+<!-- Splide JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/3.6.12/js/splide.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#container', {
+          perPage: 3, // Show 3 videos per view
+          perMove: 1,
+          autoplay: true,
+          rewind: true,
+          interval: 10000,
+          breakpoints: {
+              768: {
+                  perPage: 1 // On small screens, show 1 video per view
+              }
+          }
+      }).mount();
+  });
+</script>
+
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
+  
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Vision-Language-Action (VLA) models have shown remarkable potential in visuomotor control and instruction comprehension through end-to-end learning processes. However, current VLA models face significant challenges: they are slow during inference and require extensive pre-training on large amounts of robotic data, making real-world deployment difficult. In this paper, we introduce a new family of compact vision-language-action models, called TinyVLA, which offers two key advantages over existing VLA models: (1) faster inference speeds, and (2) improved data efficiency, eliminating the need for pre-training stage. Our framework incorporates two essential components to build TinyVLA: (1) initializing the policy backbone with robust, high-speed multimodal models, and (2) integrating a diffusion policy decoder during fine-tuning to enable precise robot actions. We conducted extensive evaluations of TinyVLA in both simulation and on real robots, demonstrating that our approach significantly outperforms the state-of-the-art VLA model, OpenVLA, in terms of speed and data efficiency, while delivering comparable or superior performance. Additionally, TinyVLA exhibits strong generalization capabilities across various dimensions, including language instructions, novel objects, unseen positions, changes in object appearance, background variations, and environmental shifts, often matching or exceeding the performance of OpenVLA. We believe that \methodname offers an interesting perspective on utilizing pre-trained multimodal models for policy learning.
           </p>
         </div>
       </div>
@@ -157,132 +393,406 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+<!-- Teaser video-->
+<section class="hero teaser" style="padding: 1%;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/framework.mp4"
+        type="video/mp4">
+      </video>
       <h2 class="subtitle has-text-centered">
-        Fourth image description.
       </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End teaser video -->
 
+<section class="hero teaser">
+  <div style="text-align: center; ">
+    <h2 class="title is-3" >Task Settings</h2>
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
       </div>
+  <div class="container is-max-desktop" style="text-align: center;">
+    <div class="hero-body">
+      <img style="width: 80%;" src="static/images/task_suite.png" alt="teaser" />
+      <h2 class="subtitle has-text-centered">There is a total of 5 tasks in single franka arm setting.
+      </h2>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
+<section class="hero teaser">
+  <div style="text-align: center; ">
+    <h2 class="title is-3" >Experiments Results</h2>
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
       </div>
+  <div class="container is-max-desktop" style="text-align: center;">
+    <div class="hero-body">
+      <img style="width: 80%;" src="static/images/real_result.jpg" alt="teaser" />
+      <h2 class="subtitle has-text-centered">Quantitative results in real-world experiments. We report the average success rate across multiple tasks and the count of trainable parameters for all models.
+      </h2>
+    </div>
+    <div class="hero-body">
+      <img style="width: 50%;" src="static/images/real_2.jpg" alt="teaser" />
+      <h2 class="subtitle has-text-centered">Quantitative results for bimanual UR5 real robot experiments. We report the average success rate over 10 trials. All models are trained in multi-task settings.
+      </h2>
     </div>
   </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
 </section>
 <!--End BibTex citation -->
 
+<div class="mt-8 md:ml-0 ml-1 text-left" >
+  <div style="text-align: center; ">
+  <h2 class="title is-3" style="color: #ff5733;">Generalization Experiments of our TinyVLA</h2>
+
+  <h3 class="title is-8" style="color: rgb(140, 143, 144);">1. Instruction generalization</h3>
+  </div>
+  <div style="margin-top: 2rem; margin-left: 0rem; display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+      <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+          <div style="display: flex; justify-content: center;">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                  <div style="background-color: #ebf8ff; margin-right: 0.5rem; margin-bottom: 0.5rem;border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 25%;">
+                      <span>
+                          <span style="font-weight: bold;">Level</span>: Understand <span style="color: red;">Unseen</span> color.<br>
+                          <span style="font-weight: bold;">Instruction</span>: Upright the tipped-over <span style="color: green;">green</span> mug.<br>
+                      </span> 
+                  </div>
+                  <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                      <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/instruction/simple_origin.mp4" style="width: 100%;"></video>
+                      <span style="position: absolute; bottom: 0.5rem; right: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: #4a4a4a; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">1x</span>
+                      <span style="position: absolute; top: 0.5rem; left: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: #4a4a4a; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">In-domain</span>
+                  </div>
+                  <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                      <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/instruction/simple.mp4" style="width: 100%;"></video>
+                      <span style="position: absolute; bottom: 0.5rem; right: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: #4a4a4a; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">1x</span>
+                      <span style="position: absolute; top: 0.5rem; left: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">Out-of-domain</span>
+                  </div>
+              </div>
+          </div>
+
+          <div style="display: flex; justify-content: center;">
+              <div style="display: flex; flex-direction: row; align-items: center;">
+                  <div style="background-color: #ebf8ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 45%;">
+                      <span>
+                          <span style="font-weight: bold;">Level</span>: Distinguish <span style="color: red;">Seen</span> objects.<br>
+                          <span style="font-weight: bold;">Instruction</span>: Pick the <span style="color: pink;">pink</span> cube.<br>
+                          <span style="font-weight: bold;">Notice</span>: Both objects are seen in different tasks. <br>
+                          Our policy did not overfit to the seen trajectories but instead picked up the cube and then released it.
+                      </span>
+                  </div>
+                  <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                      <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/instruction/middle.mp4" style="width: 100%;"></video>
+                      <span style="position: absolute; bottom: 0.5rem; right: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: #4a4a4a; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">1x</span>
+                      <span style="position: absolute; top: 0.5rem; left: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">Out-of-domain</span>
+                  </div>
+              </div>
+          </div>
+
+            <div style="display: flex; justify-content: center;">
+                <div style="display: flex; flex-direction: row; align-items: center;">
+                    <div style="background-color: #ebf8ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 45%;">
+                      <span>
+                        <span style="font-weight: bold;">Level</span>: Understand <span style="color: red;">unseen</span> objects  &amp; <span style="color: red;">New function</span> of seen objects.<br>
+                        <span style="font-weight: bold;">Instruction</span>: Pick the car and place into the box.<br>
+                        <span style="font-weight: bold;">Notice</span>: The toy car is totally <span style="color: red;">unseen</span> object.<br>
+                        Our policy can recognize the unseen toy car and place it into the box with human help.
+                    </span>
+                    </div>
+                    <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                        <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/instruction/hard.mp4" style="width: 100%;"></video>
+                        <span style="position: absolute; bottom: 0.5rem; right: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: #4a4a4a; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">1x</span>
+                        <span style="position: absolute; top: 0.5rem; left: 0.5rem; background-color: rgba(255, 255, 255, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.25rem;">Out-of-domain</span>
+                    </div>
+            </div>
+      </div>
+  </div>
+</div>
+<div style="text-align: center; ">
+<h3 class="title is-8" style="color: rgb(140, 143, 144);">2. Object&Appearance generalization</h3>
+</div>
+<div class="mt-2" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/mug_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">in-domain</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/object_mug_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Out-of-domain</span>
+                </div>
+                <!-- <div style="background-color: #48bb78; width: 2px; height: 160px; margin: 0 0rem;"></div> -->
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/drawer2.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">in-domain</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/object_drawer_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Out-of-domain</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div style="display: flex; flex-direction: row; align-items: center; width: 100%;">
+                <div style="background-color: #f0fdf4; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 50%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Upright the tipped-over mug.</span>
+                </div>
+                <div style="background-color: #f0fdf4; margin-left: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 50%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Close the drawer.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/box.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">in-domain</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/appearance_box_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Out-of-domain</span>
+                </div>
+                <!-- <div style="background-color: #48bb78; margin-left: 0.5rem; width: 1px; height: 160px; margin: auto;"></div> -->
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/mug_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">in-domain</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/object_appearance/appearance_mug_5.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Out-of-domain</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; width: 100%;">
+            <div style="display: flex; flex-direction: row; align-items: center; width: 100%;">
+                <div style="background-color: #f0fdf4; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 50%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Open the lid of the box.</span>
+                </div>
+                <div style="background-color: #f0fdf4; margin-left: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 50%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Upright the tipped-over mug.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="text-align: center; ">
+  <h3 class="title is-8" style="color: rgb(140, 143, 144);">3. Background generalization</h3>
+  </div>
+<div class="mt-2" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #fefcbf; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 25%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Place the tennis ball into the ball box.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/background/deep_blue.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Deep blue desk mat</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/background/yellow.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Yellow desk mat</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #fefcbf; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 25%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the pink cube on top of the blue cube.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/background/gray.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Gray desk mat</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/background/wooden.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Wooden desk board</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center; ">
+  <h3 class="title is-8" style="color: rgb(140, 143, 144);">4. Distractors in bimanual settings</h3>
+  </div>
+<div class="mt-2" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #fce7f3; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 25%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Transfer the bread and place it into plate.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/transfer_bread.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/transfer_bread_distractor.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">With distractors</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #fce7f3; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 25%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the cubes on top of the plate.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/stack_cube.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/stack_cubes_distractor.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">With distractors</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #fce7f3; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 100%; width: 25%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Unzipping the bag and placing a tennis ball inside it.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/unzipbag.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+                <div style="flex: 1; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video controls webkit-playsinline playsinline loop autoplay muted src="static/videos/generalization/distractors/unzipbag_distractor.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">3x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">With distractors</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: center; ">
+  <h3 class="title is-8" style="color: rgb(140, 143, 144);">5. View Generalization</h3>
+  </div>
+<div class="mt-2" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: column; max-width: 70%; margin: 0 1rem; padding: 1rem 0;">
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #faf5ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 13%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the pink cube on top of the blue cube.</span>
+                </div>
+                <div style="width: 29.5%; margin-right: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <img src="static/videos/generalization/view/left_orig.png" alt="teaser" style="width: 100%;">
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+                <!-- <div style="background-color: #9f7aea; margin-left: 0.5rem; margin-right: 0.5rem; width: 1px; height: 160px; margin: auto;"></div> -->
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video webkit-playsinline playsinline loop muted autoplay src="static/videos/generalization/view/left_-30_2.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">LeftView-30°</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #faf5ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 13%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the pink cube on top of the blue cube.</span>
+                </div>
+                <div style="width: 29.5%; margin-right: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <img src="static/videos/generalization/view/left_orig.png" alt="teaser" style="width: 100%;">
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+                <!-- <div style="background-color: #9f7aea; margin-left: 0.5rem; margin-right: 0.5rem; width: 1px; height: 160px; margin: auto;"></div> -->
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video webkit-playsinline playsinline loop muted autoplay src="static/videos/generalization/view/left_+15_2.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; left: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">LeftView+15°</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #faf5ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 13%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the pink cube on top of the blue cube.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video webkit-playsinline playsinline loop muted autoplay src="static/videos/generalization/view/right_-15_2.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">RightView-15°</span>
+                </div>
+                <!-- <div style="background-color: #9f7aea; margin-left: 0.5rem; margin-right: 0.5rem; width: 1px; height: 160px; margin: auto;"></div> -->
+                <div style="width: 29.5%; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <img src="static/videos/generalization/view/right_orig.png" alt="teaser" style="width: 100%;">
+                    <span style="position: absolute; top: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <div style="display: flex; flex-direction: row; align-items: center;">
+                <div style="background-color: #faf5ff; margin-right: 0.5rem; border-radius: 0.5rem; padding: 1rem; display: flex; align-items: center; height: 95%; width: 13%;">
+                    <span><span style="font-weight: bold;">Instruction</span>: Stack the pink cube on top of the blue cube.</span>
+                </div>
+                <div style="flex: 1; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <video webkit-playsinline playsinline loop muted autoplay src="static/videos/generalization/view/right_+15_2.mp4" style="width: 100%;"></video>
+                    <span style="position: absolute; bottom: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">1x</span>
+                    <span style="position: absolute; top: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: red; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">RightView+15°</span>
+                </div>
+                <!-- <div style="background-color: #9f7aea; margin-left: 0.5rem; margin-right: 0.5rem; width: 1px; height: 160px; margin: auto;"></div> -->
+                <div style="width: 29.5%; margin-left: 0.5rem; border-radius: 0.5rem; overflow: hidden; position: relative;">
+                    <img src="static/videos/generalization/view/right_orig.png" alt="teaser" style="width: 100%;">
+                    <span style="position: absolute; top: 0.125rem; right: 0.125rem; background-color: rgba(241, 245, 249, 0.7); color: #44403c; font-size: small; padding: 0.25rem; border-radius: 0.375rem;">Origin</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<!--BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{wen2024tinyvla,
+      title={TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation},
+      author={Wen, Junjie and Zhu, Yichen and Li, Jinming and Zhu, Minjie and Wu, Kun and Xu, Zhiyuan and Cheng, Ran and Shen, Chaomin and Peng, Yaxin and Feng, Feifei and others},
+      journal={arXiv preprint arXiv:2409.12514},
+      year={2024}
+    }</code></pre>
+  </div>
+</section>
 
   <footer class="footer">
   <div class="container">
@@ -310,3 +820,53 @@
 
   </body>
   </html>
+  <style>
+    .container {
+        max-width: 80%;
+        margin: auto;
+    }
+    .video-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    .video-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px; /* 增加每个视频项之间的间距 */
+    }
+    .description {
+        width: 50%;
+        background-color: #ebf8ff;
+        padding: 15px;
+        border-radius: 5px;
+        margin-right: 20px;
+        margin-bottom: 20px; /* 增加描述框之间的间距 */
+    }
+    .video-container {
+        width: 45%;
+        position: relative;
+    }
+    video, img {
+        width: 100%;
+        border-radius: 8px;
+    }
+        .label {
+        position: absolute;
+        padding: 2px 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 3px;
+        font-size: 12px;
+    }
+    .top-left {
+        top: 5px;
+        left: 5px;
+    }
+    .bottom-right {
+        bottom: 5px;
+        right: 5px;
+    }
+</style>
