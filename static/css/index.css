@@ -133,5 +133,50 @@ body {
   font-size: smaller;
 }
 
+.wrapper {
+  position: relative;  /* 取消绝对定位 */
+  top: 0;              /* 重置 top */
+  left: 0;             /* 重置 left */
+  transform: none;     /* 取消 transform */
+  width: auto;         /* 自动宽度 */
+  padding: 0;          /* 取消内边距 */
+}
+
+.text-container {
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  font-size: 3rem;  /* 调整字体大小 */
+  font-weight: bold;
+  color: white;
+  white-space: nowrap; /* 防止换行 */
+  text-align: left; /* 左对齐 */
+}
+
+.text-container .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  color: transparent; /* 镂空效果 */
+}
+
+.text-container .text-3 {
+  color: rgba(63, 93, 163, 0.6); /* 蓝色 */
+  transform: translate(-1px, -1px); /* 调整偏移量 */
+  -webkit-text-stroke: 1px rgba(63, 93, 163, 0.9); /* 字体边框 */
+}
+
+.text-container .text-2 {
+  color: rgba(145, 190, 92, 0.6); /* 绿色 */
+  transform: translate(0px, 0px); /* 调整偏移量 */
+  -webkit-text-stroke: 1px rgba(145, 190, 92, 0.9); /* 字体边框 */
+}
+
+.text-container .text-1 {
+  color: rgba(165, 74, 76, 0.6); /* 红色 */
+  transform: translate(1px, 1px); /* 调整偏移量 */
+  -webkit-text-stroke: 1px rgba(165, 74, 76, 0.9); /* 字体边框 */
+}
+
 
 
