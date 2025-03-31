@@ -16,7 +16,7 @@ Example project pages built using this template are:
 - https://vision.huji.ac.il/ssrl_ad
 - https://vision.huji.ac.il/deepsim
 
-
+https://szupc.github.io/EndoControlMag.github.io/
 
 ## Start using the template
 To start using the template click on `Use this Template`.
