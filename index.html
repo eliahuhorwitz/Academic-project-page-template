@@ -162,43 +162,288 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+      <div class="carousel-container">
+        <!-- 轮播图主体 -->
+        <div class="carousel-main">
+          <!-- 第一页 -->
+          <div class="carousel-item">
+            <!-- 左侧图片区域 -->
+            <div class="carousel-images">
+              <div class="image-item">
+                <img src="static/images/page1/0001_0019_merge.png" alt="Image 1" data-description="Generate multiple 3D animated images of a happy hedgehog. The images should include settings such as being in a cozy nest, dressed in a miniature jacket, wearing a small collar, dressed in a festive outfit, and wearing a flower crown."/>
+              </div>
+              <div class="image-item">
+                <img src="static/images/page2/0012_0004_merge.png" alt="Image 2" data-description="第二张图片的详细描述：这张图片表现了独特的视角..."/>
+              </div>
+              <div class="image-item">
+                <img src="static/images/page2/0012_0010_merge.png" alt="Image 3" data-description="第三张图片的详细描述：这是一个令人印象深刻的场景..."/>
+              </div>
+            </div>
+            <!-- 右侧文字区域 -->
+            <div class="carousel-text">
+              <p class="description-text"></p>
+            </div>
+          </div>
+
+          <!-- 第二页 -->
+          <div class="carousel-item">
+            <!-- 左侧图片区域 -->
+            <div class="carousel-images">
+              <div class="image-item">
+                <img src="static/images/carousel4.jpg" alt="Image 4" data-description="第四张图片的详细描述：这张图片捕捉到了精彩的瞬间..."/>
+              </div>
+              <div class="image-item">
+                <img src="static/images/carousel1.jpg" alt="Image 5" data-description="第五张图片的详细描述：这是另一个精彩的视角..."/>
+              </div>
+              <div class="image-item">
+                <img src="static/images/carousel2.jpg" alt="Image 6" data-description="第六张图片的详细描述：这张图片展现了独特的主题..."/>
+              </div>
+            </div>
+            <!-- 右侧文字区域 -->
+            <div class="carousel-text">
+              <h3>图片描述</h3>
+              <p class="description-text">将鼠标悬停在图片上查看详细描述</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 导航按钮 -->
+        <button class="carousel-button prev">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-button next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <!-- 指示器 -->
+        <div class="carousel-indicators"></div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
+<style>
+/* 轮播图容器 */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
+/* 轮播图主体 */
+.carousel-main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
+/* 轮播项 */
+.carousel-item {
+  display: none;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item.active {
+  display: flex;
+  opacity: 1;
+  gap: 30px;
+}
+
+/* 图片区域 */
+.carousel-images {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-item {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-item img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+}
+
+.image-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 文字区域 */
+.carousel-text {
+  width: 25%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.carousel-text h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.2em;
+}
+
+.description-text {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* 导航按钮 */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.carousel-button.prev {
+  left: -50px;
+}
+
+.carousel-button.next {
+  right: -50px;
+}
+
+/* 指示器 */
+.carousel-indicators {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background: #000;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 获取元素
+  const container = document.querySelector('.carousel-container');
+  const items = container.querySelectorAll('.carousel-item');
+  const prevButton = container.querySelector('.carousel-button.prev');
+  const nextButton = container.querySelector('.carousel-button.next');
+  const indicatorsContainer = container.querySelector('.carousel-indicators');
+  
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  // 创建指示器
+  items.forEach((_, index) => {
+    const indicator = document.createElement('div');
+    indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
+    indicator.addEventListener('click', () => showSlide(index));
+    indicatorsContainer.appendChild(indicator);
+  });
+
+  // 显示指定幻灯片
+  function showSlide(index) {
+    // 移除当前活动状态
+    items[currentIndex].classList.remove('active');
+    indicatorsContainer.children[currentIndex].classList.remove('active');
+
+    // 更新索引
+    currentIndex = (index + items.length) % items.length;
+
+    // 添加新的活动状态
+    items[currentIndex].classList.add('active');
+    indicatorsContainer.children[currentIndex].classList.add('active');
+  }
+
+  // 初始化第一张幻灯片
+  showSlide(0);
+
+  // 添加导航按钮事件
+  prevButton.addEventListener('click', () => {
+    showSlide(currentIndex - 1);
+    stopAutoScroll();
+  });
+
+  nextButton.addEventListener('click', () => {
+    showSlide(currentIndex + 1);
+    stopAutoScroll();
+  });
+
+  // 处理图片悬停事件
+  items.forEach(item => {
+    const images = item.querySelectorAll('.image-item img');
+    const descriptionText = item.querySelector('.description-text');
+
+    images.forEach(img => {
+      img.addEventListener('mouseenter', () => {
+        descriptionText.textContent = img.dataset.description;
+        stopAutoScroll();
+      });
+
+      img.addEventListener('mouseleave', () => {
+        descriptionText.textContent = '将鼠标悬停在图片上查看详细描述';
+        startAutoScroll();
+      });
+    });
+  });
+
+  // 自动轮播
+  function startAutoScroll() {
+    stopAutoScroll();
+    autoScrollInterval = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 5000);
+  }
+
+  function stopAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = null;
+    }
+  }
+
+  // 启动自动轮播
+  startAutoScroll();
+
+  // 鼠标悬停在容器上时暂停自动轮播
+  container.addEventListener('mouseenter', stopAutoScroll);
+  container.addEventListener('mouseleave', startAutoScroll);
+});
+</script>
 
 <!-- Youtube video -->
 <section class="hero is-small is-light">
@@ -291,7 +536,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
