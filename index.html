@@ -170,10 +170,11 @@
             <!-- 左侧图片区域 -->
             <div class="carousel-images">
               <div class="image-item">
-                <img src="static/images/page1/0001_0019_merge.png" alt="Image 1" data-description="Generate multiple 3D animated images of a happy hedgehog. The images should include settings such as being in a cozy nest, dressed in a miniature jacket, wearing a small collar, dressed in a festive outfit, and wearing a flower crown."/>
+                <img src="static/images/page1/0001_0019_merge.png" alt="Image 1" data-description="Generate multiple 3D animated images of a happy hedgehog. The images should include settings such as being in a cozy nest, dressed in a miniature jacket, wearing a small collar, dressed in a festive outfit, and wearing a flower crown.
+"/>
               </div>
               <div class="image-item">
-                <img src="static/images/page2/0012_0004_merge.png" alt="Image 2" data-description="第二张图片的详细描述：这张图片表现了独特的视角..."/>
+                <img src="static/images/page2/0012_0004_merge.png" alt="Image 2" data-description="第二张图片的详细描                述：这张图片表现了独特的视角..."/>
               </div>
               <div class="image-item">
                 <img src="static/images/page2/0012_0010_merge.png" alt="Image 3" data-description="第三张图片的详细描述：这是一个令人印象深刻的场景..."/>
@@ -263,20 +264,16 @@
 
 .image-item {
   width: 100%;
-  height: 150px;
-  position: relative;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .image-item img {
   /* width: 100%; */
-  height: 100%;
+  height: 160px;
   object-fit: cover;
   transition: transform 0.3s ease;
   cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .image-item:hover img {
@@ -287,7 +284,7 @@
 .carousel-text {
   width: 25%;
   padding: 20px;
-  bground-colorf8f8f8;
+  background-color: #f8f8f8;
   border-radius: 8px;
 }
 
