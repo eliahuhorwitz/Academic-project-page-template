@@ -625,8 +625,9 @@ code {
   }
   
   .more-works-container {
-    top: 1rem;
+    bottom: 2rem;
     right: 1rem;
+    top: auto;
   }
   
   .more-works-btn {
@@ -637,6 +638,8 @@ code {
   .more-works-dropdown {
     width: calc(100vw - 2rem);
     right: -1rem;
+    bottom: calc(100% + 0.5rem);
+    top: auto;
   }
   
   .results-carousel .item {
@@ -664,14 +667,19 @@ code {
   
   .more-works-container {
     position: fixed;
-    top: 1rem;
+    bottom: 2rem;
     right: 1rem;
     z-index: 1000;
   }
   
+  .more-works-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
   .more-works-dropdown {
     position: absolute;
-    top: calc(100% + 0.5rem);
+    bottom: calc(100% + 0.5rem);
     right: 0;
     width: calc(100vw - 2rem);
     max-width: 90vw;
