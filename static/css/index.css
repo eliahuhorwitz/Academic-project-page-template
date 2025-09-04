@@ -663,19 +663,18 @@ code {
   }
   
   .more-works-container {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 1rem auto;
-    display: block;
-    width: fit-content;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
   }
   
   .more-works-dropdown {
-    position: relative;
-    top: 0.5rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
     right: 0;
-    width: 100%;
+    width: calc(100vw - 2rem);
+    max-width: 90vw;
   }
   
   .link-block {
