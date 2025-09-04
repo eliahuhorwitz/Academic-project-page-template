@@ -1,4 +1,6 @@
 # Academic Project Page Template
+> **Notice**: This is the original version of the template. A modernized version with improved design, SEO, mobile support, and additional features is now available on the [main branch](https://github.com/eliahuhorwitz/Academic-project-page-template).
+> 
 This is an academic paper project page template.
 
 
